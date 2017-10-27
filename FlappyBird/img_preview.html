@@ -1,0 +1,83 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> Image Preview </title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    .mc{
+        border: 1px black solid;
+        margin: 0 auto;
+        background: #6495ED;
+    }
+    .fc{
+        border: 1px black solid;
+        background: url("image/all_in_1.png");
+    }
+    .left{
+        float:left;
+    }
+    up{
+        margin-right:350px;
+    }
+    .right{
+        float:right;
+        margin-right:200px;
+    }
+    </style>
+    <!-- import scripts -->
+    <script>'use strict';</script>
+    <script>var log = console.log.bind(console)</script>
+    <script src='map.js'></script>
+    <script src='preview.js'></script>
+ </head>
+ <body>
+
+  <div class="parent">
+    <div class="left">
+        <canvas id="sourse_canvas" class="fc" width="512" height="512"></canvas>
+        <canvas id="main_canvas" class="mc" width="256" height="512"></canvas>
+    </div>
+
+    <div id="up" height="200">
+
+    </div>
+    <div class="right">
+        <table>
+            <tr height="50"></tr>
+            <tr><td>sx:<input id="input_sx" type="text" size="2"></input></td> <td>sy:<input id="input_sy" type="text" size="2"></input></td></tr>
+            <tr><td>sw:<input id="input_sw" type="text" size="2"></input> <td>sh:<input id="input_sh" type="text" size="2"></input></tr>
+            <tr><td>dx:<input id="input_dx" type="text" size="2"></input></td> <td>dy:<input id="input_dy" type="text" size="2"></input></td></tr>
+            <tr><td>dw:<input id="input_dw" type="text" size="2"></input></td> <td>dh:<input id="input_dh" type="text" size="2"></input></td></tr>
+            <tr><td><input id="btn_draw" type="submit" size="2" value="预 览"></input></td></tr>
+            <tr height="10"></tr>
+            <tr><td>sx:<input id="input_sx1" type="text" size="2"></input></td><td>sy:<input id="input_sy1" type="text" size="2"></input></td></tr>
+            <tr><td>sw:<input id="input_sw1" type="text" size="2"></input><td>sh:<input id="input_sh1" type="text" size="2"></input></tr>
+            <tr><td>dx:<input id="input_dx1" type="text" size="2"></input></td><td> dy:<input id="input_dy1" type="text" size="2"></input></td></tr>
+            <tr><td>dw:<input id="input_dw1" type="text" size="2"></input></td><td>dh:<input id="input_dh1" type="text" size="2"></input></td></tr>
+            <tr><td><input id="btn_draw1" type="submit" size="2" value="预 览"></input></td></tr>
+            <tr height="50"></tr>
+            <tr><td>loadImgByName:<br><input id="input_map" type="text" size="15"></input></td></tr>
+            <tr>
+                <td><input id="btn_drawmap" type="submit" size="2" value="载 入"></input>
+                    <input id="btn_clear" type="submit" size="2" value="清 空"></input></td>
+            </tr>
+        </table>
+    </div>
+  </div>
+    <script>
+
+        var __main = function () {
+            //preview
+            var pv = PreView()
+            pv.register()
+            var pv1 = PreView1()
+            pv1.register()
+            var pv2 = PreView2()
+            pv2.register()
+        }
+
+        __main()
+
+    </script>
+ </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> Flappy Bird </title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    .mc{
+        border: 1px black solid;
+        margin: 0 auto;
+        background: #6495ED;
+    }
+    .left{
+        float:left;
+        margin-left: 10px;
+    }
+    .center{
+        /* float:left; */
+        margin-left:200px;
+    }
+    .bottom{
+        float:left;
+        margin-left:200px;
+    }
+    </style>
+    <!-- import scripts -->
+    <script>
+        'use strict'
+        const e = sel => document.querySelector(sel)
+        const log = console.log.bind(console)
+    </script>
+    <script src='map.js'></script>
+    <script src='game.js'></script>
+    <script src='elements.js'></script>
+ </head>
+ <body>
+
+  <div class="parent">
+    <div class="left">
+        <table>
+            <tr><audio id="bgm" controls autoplay loop><source src="bgm.mp3" type="audio/mpeg"></audio></tr>
+            <tr height="100"></tr>
+            <tr><td>快捷键：</td></tr>
+            <tr><td>重新开始：</td><td>F5</td></tr>
+            <tr><td>暂停：</td><td>P</td></tr>
+            <tr><td>平移：</td><td>S/F</td></tr>
+            <tr><td>跳跃：</td><td>空格</td></tr>
+
+        </table>
+    </div>
+    <div class="center">
+        <canvas id="main_canvas" class="mc" width="560" height="512"></canvas>
+    </div>
+    <div class="bottom">
+        <table>
+            <tr height="10"></tr>
+            <tr><td id="pipe_speed">pipe_speed: 3</td>
+                <td><input id="id-pipes-speed-range" name="pipe_speed" type="range" value="2" max="15" min="1"></td>
+                <td id="pipe_space">pipe_space: 100</td>
+                <td><input id="id-pipes-space-range" name ="pipe_space" type="range" value="100" max="200" min="50"></td>
+                <td id="difficulty">difficulty: 2</td>
+                <td><input id="id-difficulty-range" name ="difficulty" type="range" value="2" max="3" min="1"></td></tr>
+            <tr><td id="move_speed">move_speed: 4</td>
+                <td><input id="id-speed-range" name ="move_speed" type="range" value="3" max="15" min="1"></td>
+                <td id="jump_speed">jump_speed: 5</td>
+                <td><input id="id-jump-speed-range" name ="jump_speed" type="range" value="5" max="15" min="1"></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </div>
+  </div>
+<script>
+
+    const __main = function () {
+        var game = VGame()
+        game.load()
+    }
+
+    __main()
+
+</script>
+ </body>
+</html>
